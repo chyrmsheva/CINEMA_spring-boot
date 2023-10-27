@@ -7,7 +7,6 @@ import com.example.cinema_springboot.service.ServiceLayer;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,5 +48,9 @@ public class CinemaService implements ServiceLayer<Cinema> {
     @Override
     public void deleteById(Long id) {
         cinemaRepository.deleteById(id);
+    }
+
+    public List<Cinema> findByName(String name) {
+        return cinemaRepository.findByName(name);
     }
 }

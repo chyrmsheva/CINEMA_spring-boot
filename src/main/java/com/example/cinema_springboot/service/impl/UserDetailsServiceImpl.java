@@ -1,6 +1,8 @@
 package com.example.cinema_springboot.service.impl;
 
+import com.example.cinema_springboot.model.entity.security.User;
 import com.example.cinema_springboot.repository.UserRepository;
+
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByName(username);
+        User user = userRepository.findByName(username);
+        if (user == null) {
+            throw new UsernameNotFoundException(
+                    String.format("User with name=%s not found!!!", username));
+        }
+        return user;
+
     }
 }

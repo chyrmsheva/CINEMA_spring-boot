@@ -1,0 +1,50 @@
+!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>all_session</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    body{
+      background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm283-nunny-106-g.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=c8d141d9560679f5779481d47aa7dbd7");}
+
+  </style>
+
+
+
+
+</head>
+<body  style="background-color:white;">
+
+
+
+
+<table class="table"
+       style="width: 400px; height: 300px; margin-top: 150px; margin-left: 400px">
+  <thead style="margin-left: 100px" class="thead-dark">
+  <tr>
+    <th  scope="col"><b>ID</b></th>
+    <th  scope="col"><b>NAME</b></th>
+    <th  scope="col"><b>RATING</b></th>
+    <th  scope="col"><b>UPDATE</b></th>
+    <th>
+      <a href="/room/save" th:method="get">
+        <button type="button" class="btn btn-outline-info">+</button>
+      </a>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <td th:text="${}"></td>
+  <td th:text="${room.name}"></td>
+  <td th:text="${room.rating}"></td>
+
+  </tr>
+  </tbody>
+
+</table>
+
+</body>

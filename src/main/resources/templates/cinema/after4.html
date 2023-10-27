@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>after4</title>
+    <style>
+        img:hover {
+            transform: scaleX(-1);
+        }
+    </style>
+    <style>
+        .klass{
+            margin-left: 350px;
+            margin-top: 40px;
+        }
+    </style>
+
+    <style>
+        body{
+            background-image: url("https://goldwallpapers.com/uploads/posts/website-background-wallpapers/website_background_wallpapers_001.jpg");}
+
+    </style>
+    <style>
+        ul {
+            list-style-type: none;
+            margin-right: 250px;
+            margin-left: 250px;
+            padding: 10px;
+            overflow: hidden;
+            background-color: steelblue;
+
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: black;
+        }
+    </style>
+
+
+
+    <style>
+        .button {
+            background-color: steelblue; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        ​
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        ​
+        .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li style="margin-left: 50px"><a style="margin-left: 50px" th:href="@{/cinema/front_page}">All</a></li>
+    <li style="margin-left: 10px"><a th:href="@{/cinema/find_all}">Cinema</a></li>
+    <li style="margin-left: 10px"><a th:href="@{/movie/find_all}">Movies</a></li>
+    <li style="margin-left: 10px"><a th:href="@{/place/find_all}">Place</a></li>
+    <li style="margin-left: 10px"><a th:href="@{/sess/find_all}">Session</a></li>
+    <li style="margin-left: 10px"><a th:href="@{/place/save}">Buy a Ticket</a></li>
+
+</ul>
+
+
+<div style="margin-top: 50px">
+    <img style="margin-left: 100px" src="https://designerwomen.co.uk/wp-content/uploads/2021/12/after-depois-do-desencontro.jpg" alt="Paris" width="500" height="300">
+    <img  src="https://br.web.img3.acsta.net/r_1280_720/newsv7/21/09/08/20/28/5729644.jpg" alt="Paris" width="500" height="300">
+    <img style="margin-left: 100px" src="https://festivalteen.com.br/wp-content/uploads/2021/02/after-depois-da-verdade.jpg" alt="Paris" width="500" height="300">
+    <img  src="https://thumbs.web.sapo.io/?W=800&H=0&delay_optim=1&epic=YWM10MtygVShWUDOTi0m4sdyfHbxTzq5zGPSqK27i/a0SkpuQ+JBlDN2qgmM1kw4x8SD4iXbycQc1+D37m5v781ffX1sb7vzx8GU+LdTUgnjY+E=" alt="Paris" width="500" height="300">
+
+</div>
+<div class="klass">
+    <button><a href="https://www.imdb.com/video/vi3778265625/?playlistId=tt13070038&ref_=tt_pr_ov_vi" class="button button1">Trailer</a></button>
+    <button><a href="https://hd.kinopoisk.ru/film/82fcff76a3254bf587b14b39a4b75b21?watch=" class="button button2">Watch the movie now</a></button>
+    <button><a th:href="@{/cinema/chan}" class="button button2">Next movie</a></button>
+
+</div>
+
+</body>
+<html>

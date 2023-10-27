@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>all_cinemas</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    body{
+      background-image: url("https://img1.akspic.ru/attachments/crops/1/0/0/7/4/147001/147001-purpurnyj_cvet-rozovyj-svet-dizajn-karmannye_kompyutery-3840x2160.jpg");}
+
+  </style>
+
+  </style>
+</head>
+<body  style="background-color:white;">
+
+
+<table class="table"
+       style="width: 400px; height: 300px; margin-top: 150px; margin-left: 400px">
+  <thead style="margin-left: 100px" class="thead-dark">
+  <tr>
+    <th  scope="col"><b>ID</b></th>
+    <th  scope="col"><b>NAME</b></th>
+    <th  scope="col"><b>RATING</b></th>
+    <th  scope="col"><b>UPDATE</b></th>
+    <th>
+      <a href="/place/save" th:method="get">
+        <button type="button" class="btn btn-outline-info">+</button>
+      </a>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <td th:text="${find_by_id.id}"></td>
+  <td th:text="${find_by_id.name}"></td>
+  <td th:text="${find_by_id.rating}"></td>
+
+  </tbody>
+</table>
+
+</body>

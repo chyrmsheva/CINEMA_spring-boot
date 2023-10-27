@@ -3,26 +3,28 @@ package com.example.cinema_springboot.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "roles")
+@Table(name = "places")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Role implements GrantedAuthority {
 
+public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
 
-    String name;
+    long id;
+    int x;
+    int y;
+    int price;
 
-    @Override
-    public String getAuthority() {
-        return name;
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_id")
+    private Room room;
+    @Transient
+    private int roomId;
+
 }

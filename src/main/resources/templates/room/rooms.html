@@ -1,0 +1,119 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+
+    <style>
+        body {
+            background-image: url("https://www.pixel4k.com/wp-content/uploads/2020/12/blue-dark-light-formation-4k_1608578313.jpg");
+        }
+    </style>
+
+
+
+
+
+    <style>
+        .container {
+            position: relative;
+            width: 50%;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #008CBA;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            height: 100%;
+        }
+
+        .text {
+            white-space: nowrap;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body>
+
+<button><a th:href="@{/room/find_all}">Back</a></button>
+
+<div style="margin-left: 100px" class="container">
+    <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/05/13/10/pather-cinema-2.jpg" alt="Avatar" class="image">
+    <div class="overlay">
+        <div class="text">
+            <h5>Hall 1: VIP </h5>
+            <h5> - 24 sofas</h5>
+            <h5>- increased distance between seats and rows</h5>
+            <h5> - Dolby Surround 7.1 sound system</h5>
+            <h5>  - cinema projector 3D  XpanD system active</h5>
+            <h5>   - sound equipment and acoustics Acoustic design from QSC</h5>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left: 400px" class="container">
+    <img src="https://img.stereo.ru/v3/news/2019/4/d2a2a96e0bd1ed33e1533b8d0cb4523d.jpg" alt="Avatar" class="image">
+    <div class="overlay">
+        <div class="text">
+            <h5>Hall 2: VIP </h5>
+            <h5> - 6 seats</h5>
+            <h5>- all soft and comfortable sofas</h5>
+            <h5> - Dolby Surround 7.1 sound system</h5>
+            <h5>  - Cinema projector 2D</h5>
+            <h5>   - sound equipment and acoustics Acoustic design from QSC</h5>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left: 100px" class="container">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/movie-theater-beds-cinema-pathe-switzerland-1570037452.jpg" alt="Avatar" class="image">
+    <div class="overlay">
+        <div class="text">
+            <h5>Hall 3: VIP </h5>
+            <h5> - 4 Double beds</h5>
+            <h5> - Dolby Surround 7.1 sound system</h5>
+            <h5>  - cinema projector 3D  XpanD system active</h5>
+            <h5>   - sound equipment and acoustics Acoustic design from QSC</h5>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left: 400px" class="container">
+    <img src="https://www.timeoutdoha.com/cloud/timeoutdoha/2021/08/17/new-cinema-opens-doha-oasis1.jpg" alt="Avatar" class="image">
+    <div class="overlay">
+        <div class="text">  <h5>Hall 4: VIP </h5>
+            <h5> - 10 sofas</h5>
+            <h5>- increased distance between seats and rows</h5>
+            <h5> - Dolby Surround 7.1 sound system</h5>
+            <h5>  - cinema projector 3D  system active</h5>
+            <h5>   - sound equipment and acoustics Acoustic design from QSC</h5></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

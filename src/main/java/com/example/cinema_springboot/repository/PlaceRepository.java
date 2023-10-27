@@ -1,10 +1,9 @@
 package com.example.cinema_springboot.repository;
 
-import com.example.cinema_springboot.model.entity.security.User;
+import com.example.cinema_springboot.model.entity.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByName(String name);
+public interface PlaceRepository extends JpaRepository<Place , Long> {
 }

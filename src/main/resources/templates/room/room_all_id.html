@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>movie</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    body{
+      background-image: url("https://goldwallpapers.com/uploads/posts/website-background-wallpapers/website_background_wallpapers_001.jpg");}
+  </style>
+
+
+</head>
+<body>
+
+
+
+<table class="table"  style="width: 900px; height: 200px; margin-top: 10px; margin-left: 250px;">
+  <thead style="margin-left: 100px"  class="thead-dark">
+  <tr>
+
+    <th scope="col" style="color: aliceblue"><b>ID</b></th>
+    <th scope="col" style="color: aliceblue"><b>NAME</b></th>
+    <th scope="col" style="color: aliceblue"><b>RATING</b></th>
+    <th scope="col" style="color: aliceblue"><b>CINEMA</b></th>
+    <th scope="col" style="color: aliceblue"><b>PLACES</b></th>
+    <th scope="col" style="color: aliceblue"><b>SESSION</b></th>
+    <th>
+      <a class="btn btn-primary" th:href="@{/room/save}" role="button" >AddRoom</a>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="room:${room_all_id}">
+    <td th:text="${room.id}" style="color: aliceblue"></td>
+    <td th:text="${room.name}" style="color: aliceblue"></td>
+    <td th:text="${room.rating}" style="color: aliceblue"></td>
+    <td th:text="${room.cinemaId}" style="color: aliceblue"></td>
+    <td>
+      <form>
+        <a class="btn btn-success" th:href="@{/cinema/find_all}" role="button"><strong>Cinema</strong></a>
+      </form>
+    </td>
+    <td>
+      <form>
+        <a class="btn btn-success" th:href="@{/place/find_all}" role="button" ><strong>Places</strong></a>
+      </form>
+    </td>
+    <td>
+      <form>
+        <a class="btn btn-success" th:href="@{/session/find_all}" role="button" ><strong>Session</strong></a>
+      </form>
+    </td>
+    <!--    <td>-->
+    <!--      <a class="btn btn-primary" th:href="@{/room/find_by_id/{id}(id=${room.id})}" role="button" >Enter</a>-->
+    <!--    </td>-->
+    <!--        <td><a class="btn btn-danger" th:href="@{/cinemaMvc/update_cinema/{id}(id=${cinemaMvc.id})}" role="button" >del</a></td>-->
+  </tr>
+
+  </tbody>
+
+</table>
+
+</body>

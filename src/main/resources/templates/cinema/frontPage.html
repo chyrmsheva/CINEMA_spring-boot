@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Front Page</title>
+    <link rel="stylesheet" href="Cinema.css">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-vector/green-curve-frame-template-vector_53876-162220.jpg");
+        }
+    </style>
+
+
+
+
+    <style>
+        .dropbtn  {
+            background-color: darkseagreen;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+    </style>
+
+
+
+
+
+
+    <style>
+
+        body{
+            margin:0px;
+            padding: 0px;
+            font-family: poppins;
+            background-color: rgba(151,151,151,0.03);
+        }
+        *{
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width:100%;
+            border:1px solid rgba(0,0,0,0.04);
+            background-color: darkseagreen;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+        }
+        .logo img{
+            height: 35px;
+        }
+        nav .menu{
+            display: flex;
+        }
+        nav .menu li a{
+
+            height: 40px;
+            line-height: 43px;
+            margin: 0px;
+            padding: 0px 22px;
+            display: flex;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color:#1a1a1a;
+            letter-spacing: 1px;
+        }
+        .search{
+            width:250px;
+            height: 40px;
+            background-color: rgba(245,245,245,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 0px 20px;
+        }
+        .search input{
+            width:100%;
+            height: 30px;
+            border:none;
+            outline: none;
+            background-color: transparent;
+        }
+        .search i{
+            color:#3a3a3a;
+        }
+        nav .menu li a:hover{
+            background-color: #242424;
+            color:#ffffff;
+            box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+            transition: all ease 0.2s;
+        }
+
+        .showcase-box img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .latest-b-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .latest-b-text strong{
+            color:#3a3a3a;
+            margin: 0px;
+        }
+
+        .latest-b-text p{
+            color:#979797;
+            margin: 0px;
+        }
+        .movies-heading h2{
+            font-weight: 400;
+            margin: 0px;
+            padding: 1px 20px;
+            background-color: rgba(0,0,0,0.01);
+            border: 1px solid rgba(0,0,0,0.06);
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        .movies-heading{
+            display: flex;
+            margin:0px 2%;
+        }
+        .movies-box{
+            width:300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+            margin: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            border-top: 3px solid #292929;
+        }
+        .movies-img{
+            width:100%;
+            height: 400px;
+            position: relative;
+        }
+        .movies-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .movies-box a{
+            text-align:center;
+            display: block;
+            font-weight: 600;
+            display: -webkit-box;
+            max-width: 80%;
+            /*-webkit-line-clamp: vertical;*/
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #3a3a3a;
+            margin: 20px;
+        }
+        .movies-box:hover{
+            transform: translateY(-10px);
+            transition: all ease 0.2s;
+        }
+        #movies-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .quality{
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1f1f1f;
+            color: #ffffff;
+            padding: 5px 20px;
+            font-weight: 500;
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+        }
+        .btns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btns a{
+            width: 130px;
+            height: 40px;
+            border:none;
+            outline: none;
+            color: #ffffff;
+            background-color: #3963f0;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+        }
+        .btns a:hover{
+            background-color: #284fd1;
+        }
+        footer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(0,0,0,0.1);
+
+        }
+        footer p{
+            color:#5e5e5e;
+            margin: 10px 0px;
+            font-size: 0.9rem;
+        }
+        nav .menu-btn{
+            display: none;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+
+<!--navigation-------------->
+<nav style="margin-top: 20px">
+    <!--logo--------------->
+
+    <a href="/logout" class="logo">
+        <img src="https://img.icons8.com/?size=2x&id=lOqPZg27myC9&format=png"/>
+    </a>
+
+
+
+    <!--menu--btn----------------->
+    <input type="checkbox" class="menu-btn" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+    </label>
+    <!--menu-------------->
+    <ul class="menu">
+        <div class="dropdown">
+            <button class="dropbtn">All</button>
+            <div class="dropdown-content">
+
+                <ul>
+
+                    <li><a th:href="@{/cinema/find_all}">Cinema</a></li>
+                    <li><a th:href="@{/movie/find_all}">Movie</a></li>
+                    <li><a th:href="@{/place/find_all}">Place</a></li>
+                    <li><a th:href="@{/room/find_all}">Room</a></li>
+                    <li><a th:href="@{/session/find_all}">Session</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Cinema</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a th:href="@{/cinema/save}">save</a></li>
+                    <li><a th:href="@{/cinema/find_all}">find all</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Movie</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a th:href="@{/movie/save}">save</a></li>
+                    <li><a th:href="@{/movie/find_all}">find all</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Place</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a th:href="@{/place/save}">save</a></li>
+                    <li><a th:href="@{/place/find_all}">find all</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div  class="dropdown">
+            <button class="dropbtn">Room</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a th:href="@{/room/save}">save</a></li>
+                    <li><a th:href="@{/room/find_all}">find all</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div  class="dropdown">
+            <button class="dropbtn">Session</button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a th:href="@{/session/save}">save</a></li>
+                    <li><a th:href="@{/session/find_all}">find all</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+    </ul>
+
+    <div class="search">
+
+       <input type="text" placeholder="Find Your Favourtie Movies"/>
+        <i class="fas fa-search"></i>
+
+    </div>
+</nav>
+
+<div style="margin-top: 150px" class="movies-heading">
+    <h2>----------------------------------------------Popular Movies----------------------------------------------</h2>
+</div>
+<section style="margin-top: 50px" id="movies-list">
+
+    <div  class="movies-box">
+
+
+
+        <div class="movies-img">
+            <div class="quality">1</div>
+            <img src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/820a7575a6eae345cf8db7cc0e5b9bc2c15b6eed4e64dccb784a49a40b2fa08f._RI_TTW_.jpg">
+        </div>
+        <a th:href="@{/cinema/after}"> After 4 (2023) Full Movie[In English] GREAT BRITAIN | 2w 10min</a>
+
+    </div>
+    <!--box-2------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">2</div>
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/9662528/pub_647dc97b4517160826687b20_647dc9e6ea92526071acd300/scale_1200">
+        </div>
+        <!--text--------->
+        <a th:href="@{/cinema/chan}">Ride on  (2023) Full Movie[In English] CHINA | 1w 45min></a>
+    </div>
+    <!--box-3------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">3</div>
+            <img src="https://www.iphones.ru/wp-content/uploads/2023/05/IMG_2943.jpeg">
+        </div>
+        <!--text--------->
+        <a href="#">
+            Fast X (2023) Full Movie[In English] USA | 2w 21min
+        </a>
+    </div>
+    <!--box-4------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">4</div>
+            <img src="https://www.kino-teatr.ru/movie/posters/big/5/116335.jpg">
+        </div>
+        <!--text--------->
+        <a href="#">
+            Who am I (2014) Full Movie[In English] GERMANY | 1w 50min
+        </a>
+    </div>
+    <!--box-5------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">5</div>
+            <img src="https://irecommend.ru/sites/default/files/product-images/2426182/YDvCkDkKAYUPJXZQjLti3w.jpg">
+        </div>
+        <!--text--------->
+        <a href="#">
+            The ritual killer (2022) Full Movie[In English] With English Subtitles | 2w 23min
+        </a>
+    </div>
+    <!--box-6------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">6</div>
+            <img src="https://scarfilm.org/wp-content/uploads/2023/08/rachel-stone.jpg">
+        </div>
+        <!--text--------->
+        <a href="#">
+            Heart of stone (2023) Full Movie[In English] USA | 2w 30min
+        </a>
+    </div>
+    <!--box-7------------------------>
+    <div class="movies-box">
+        <!--img------------>
+        <div class="movies-img">
+            <div class="quality">7</div>
+            <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/2e51cb8b-fd51-4166-84a2-63559733baac/600x900">
+        </div>
+        <!--text--------->
+        <a href="#">
+            Avatar (2022) Full Movie[In English] USA | 2w 18min
+        </a>
+    </div>
+    <!--box-8------------------------>
+
+</section>
+<!--btns--------------->
+<div class="btns">
+    <li><a th:href="@{/cinema/save}">Previous</a></li>
+    <li><a th:href="@{/cinema/find_all}">Next</a></li>
+</div>
+
+</body>
+</html>

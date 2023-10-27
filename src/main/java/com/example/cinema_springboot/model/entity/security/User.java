@@ -1,4 +1,4 @@
-package com.example.cinema_springboot.model.entity;
+package com.example.cinema_springboot.model.entity.security;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,7 +25,6 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
     String name;
     String password;
 

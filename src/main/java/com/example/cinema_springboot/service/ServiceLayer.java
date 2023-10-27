@@ -1,7 +1,5 @@
 package com.example.cinema_springboot.service;
 
-import com.example.cinema_springboot.model.entity.Cinema;
-
 import java.util.List;
 
 public interface ServiceLayer <T> {
@@ -10,7 +8,7 @@ public interface ServiceLayer <T> {
 
     T findById(Long id);
 
-    List<Cinema> findAll();
+    List<T> findAll();
 
     T update(Long id, T t);
 
